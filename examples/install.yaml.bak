@@ -1,0 +1,19 @@
+---
+apiVersion: pkg.crossplane.io/v1alpha1
+kind: ControllerConfig
+metadata:
+  name: jet-apigeeprov-config
+  labels:
+    app: crossplane-provider-jet-apigeeprov
+spec:
+  image: crossplane/provider-jet-apigeeprov-controller:v0.1.0
+  args: ["-d"]
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: crossplane-provider-jet-apigeeprov
+spec:
+  package: crossplane/provider-jet-apigeeprov:v0.1.0
+  controllerConfigRef:
+    name: jet-apigeeprov-config
