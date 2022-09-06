@@ -1,0 +1,13 @@
+apiVersion: apigee.apigeeprov.jet.crossplane.io/v1alpha1
+kind: User
+metadata:
+  name: demouser
+  namespace: crossplane-system
+spec:
+  forProvider:
+    emailId: "kdorateja@gmail.com"
+    firstName: "Teja"
+    lastName: "Raju"
+    passwordSecretRef: ""
+  providerConfigRef:
+    name: default

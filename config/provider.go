@@ -22,7 +22,9 @@ import (
 
 	"github.com/Teja446/apigeeprov/config/alias"
 	"github.com/Teja446/apigeeprov/config/cache"
+	"github.com/Teja446/apigeeprov/config/environment_kvm"
 	"github.com/Teja446/apigeeprov/config/keystore"
+	"github.com/Teja446/apigeeprov/config/organization_kvm"
 	"github.com/Teja446/apigeeprov/config/role"
 	"github.com/Teja446/apigeeprov/config/user"
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
@@ -53,6 +55,8 @@ func GetProvider() *tjconfig.Provider {
 			"apigee_alias$",
 			"apigee_cache$",
 			"apigee_keystore$",
+			"apigee_organization_kvm$",
+			"apigee_environment_kvm$",
 		}))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
@@ -62,6 +66,8 @@ func GetProvider() *tjconfig.Provider {
 		alias.Configure,
 		cache.Configure,
 		keystore.Configure,
+		environment_kvm.Configure,
+		organization_kvm.Configure,
 	} {
 		configure(pc)
 	}

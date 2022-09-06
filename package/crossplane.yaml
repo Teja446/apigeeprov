@@ -4,4 +4,4 @@ metadata:
   name: apigeeprov
 spec:
   controller:
-    image: DOCKER_REGISTRY/apigeeprov-controller:VERSION
+    image: kdorateja/apigeeprovider:v1

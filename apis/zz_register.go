@@ -23,6 +23,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 
 	v1alpha1 "github.com/Teja446/apigeeprov/apis/apigee/v1alpha1"
+	v1alpha1environment "github.com/Teja446/apigeeprov/apis/environment/v1alpha1"
+	v1alpha1organization "github.com/Teja446/apigeeprov/apis/organization/v1alpha1"
 	v1alpha1apis "github.com/Teja446/apigeeprov/apis/v1alpha1"
 )
 
@@ -30,6 +32,8 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1environment.SchemeBuilder.AddToScheme,
+		v1alpha1organization.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 	)
 }

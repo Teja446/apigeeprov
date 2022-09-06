@@ -26,6 +26,8 @@ import (
 	keystore "github.com/Teja446/apigeeprov/internal/controller/apigee/keystore"
 	role "github.com/Teja446/apigeeprov/internal/controller/apigee/role"
 	user "github.com/Teja446/apigeeprov/internal/controller/apigee/user"
+	kvm "github.com/Teja446/apigeeprov/internal/controller/environment/kvm"
+	kvmorganization "github.com/Teja446/apigeeprov/internal/controller/organization/kvm"
 	providerconfig "github.com/Teja446/apigeeprov/internal/controller/providerconfig"
 )
 
@@ -38,6 +40,8 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		keystore.Setup,
 		role.Setup,
 		user.Setup,
+		kvm.Setup,
+		kvmorganization.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
